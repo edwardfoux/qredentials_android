@@ -4,13 +4,14 @@
  * 
  * Created by lisah0 on 2012-02-24
  */
-package net.sourceforge.zbar.android.CameraTest;
+package qredentials;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
 import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
+import net.sourceforge.zbar.android.CameraTest.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
