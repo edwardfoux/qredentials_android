@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/business"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/sign_up_button_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_selector"
+        android:text="Sign up" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:text="QRED"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    
+
+    <Button
+        android:id="@+id/login_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/sign_up_button_welcome"
+        android:background="@drawable/button_selector"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/qr_scan_button_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/login_welcome"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_selector"
+        android:text="Scan the QR Card" />
+
+    <TextView
+        android:id="@+id/intro_welcome"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/qr_scan_button_welcome"
+        
+        
+        android:background="@android:color/darker_gray"
+        android:text="Learn more about the latest generation of business card"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RelativeLayout
+        android:id="@+id/layout_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_welcome"
+        android:layout_centerHorizontal="true" >
+
+        <ProgressBar
+            android:id="@+id/card_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+        
+    </RelativeLayout>
+
