@@ -1,4 +1,5 @@
-package qredentials;
+package net.sourceforge.zbar.android.CameraTest;
+
 
 import net.sourceforge.zbar.android.CameraTest.R;
 import android.app.Activity;

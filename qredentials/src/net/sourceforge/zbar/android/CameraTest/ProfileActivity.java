@@ -1,4 +1,4 @@
-package qredentials;
+package net.sourceforge.zbar.android.CameraTest;
 
 import net.sourceforge.zbar.android.CameraTest.R;
 import util.DownloadImageTask;
@@ -25,6 +25,13 @@ public class ProfileActivity  extends Activity{
 	 
 
 	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		startActivity(intent);
+		super.onBackPressed();
+	}
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -49,9 +56,18 @@ public class ProfileActivity  extends Activity{
 				
 			}
 		});
+		editProfileBTN.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent myIntent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+				startActivityForResult(myIntent,1);
+				
+			}
+		});
 		
 		new DownloadImageTask((ImageView) findViewById(R.id.qrcode_image_profile))
-        .execute("http://java.sogeti.nl/JavaBlog/wp-content/uploads/2009/04/android_icon_256.png");
+        .execute("http://upload.wikimedia.org/wikipedia/commons/3/38/Qr-code-ver-10.png");
 
 	}
 	private void setup() {

@@ -1,20 +1,19 @@
-package qredentials;
+package net.sourceforge.zbar.android.CameraTest;
 
 
 
 
 
 
-import net.sourceforge.zbar.android.CameraTest.R;
+
+import util.Utility;
 import android.app.Activity;
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -37,6 +36,14 @@ public class WelcomeActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_welcome);
 		setup();
+		
+		if (Utility.getIsloggedIn(getApplicationContext())){
+			Intent myIntent = new Intent(WelcomeActivity.this, ProfileActivity.class);
+		startActivity(myIntent);
+			finish();
+			return;
+		}
+			
 		
 		signUpBTN.setOnClickListener(new OnClickListener() {
 			

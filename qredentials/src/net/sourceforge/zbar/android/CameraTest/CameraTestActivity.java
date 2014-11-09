@@ -4,7 +4,7 @@
  * 
  * Created by lisah0 on 2012-02-24
  */
-package qredentials;
+package net.sourceforge.zbar.android.CameraTest;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;

@@ -10,12 +10,23 @@ import android.util.Log;
 public class Utility {
 	public static SharedPreferences sp = null;
 	public static final String PREFS_NAME = "MyPrefsFile";
-	public static final String USERNAME = "usernmae";
+	public static final String USERNAME = "username";
 	public static final String NAME = "name";
+	
 	public static final String ISLOGGEDIN = "isloggedin";
-	public static final String TOKEN = "token";
+	public static final String TOKEN = "access_token";
 	public static final String TIMESTAMP = "timestamp";
 	public static final String TAG = "qredential: ";
+	public static final int PASSWORD_MIN_LEN = 2;
+	public static final String EMAIL = "email";
+	public static final String PASSWORD = "password";
+	public static final String GRANTTYPE = "grant_type";
+	public static final String UUID = "uuid";
+	public static final String PHONE = "phone";
+	public static final String PHONE2 = "phone2";
+	public static final String ADDRESS = "address";
+	public static final String WEBSITE = "website";
+	
 	private static Context applicationContext;
 
 	public static void setUsername(String username){
@@ -117,7 +128,67 @@ public class Utility {
 	        return haveConnectedWifi || haveConnectedMobile;
 	        
 	    }
-	
+	public static void setUuid(String uuid2, Context c) {
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putString(UUID, uuid2);
+
+		// Commit the edits!
+		editor.commit();
+		
+	}
+	public static void setPhone(String phone3, Context c) {
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putString(PHONE, phone3);
+
+		// Commit the edits!
+		editor.commit();
+	}
+	public static void setPhone2(String phone, Context c) {
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putString(PHONE2, phone);
+
+		// Commit the edits!
+		editor.commit();
+	}
+	public static void setAddress(String adr, Context c) {
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putString(ADDRESS, adr);
+
+		// Commit the edits!
+		editor.commit();
+	}
+	public static void setWebsite(String w, Context c) {
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putString(WEBSITE, w);
+
+		// Commit the edits!
+		editor.commit();
+	}
+	public static String getPhone(Context c){
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		return sp.getString(PHONE, null);
+	}
+		public static String getPhone2(Context c){
+			sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+			return sp.getString(PHONE2, null);
+	}
+	public static String getWebsite(Context c){
+				sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+	return sp.getString(WEBSITE, null);
+	}
+	public static String getName(Context c){
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		return sp.getString(NAME, null);
+	}
+	public static String getAddress(Context c){
+		sp = c.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		return sp.getString(ADDRESS, null);
+	}
 
 
 }
